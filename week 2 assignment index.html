@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .form-container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Student Portal</h1>
+        
+        <!-- Audio Element -->
+        <h2>Listen to the Student Introduction</h2>
+        <audio controls>
+            <source src="audio/student-introduction.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Video Element -->
+        <h2>Watch the Student Welcome Video</h2>
+        <video controls>
+            <source src="https://youtu.be/zb-i9nw3MSo" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+
+        <!-- Image Embed -->
+        <h2>Student Image</h2>
+        <img src="c:\Users\Gatluak\Downloads\download (1).jpeg" alt="Student Photo">
+
+        <!-- Registration Form -->
+        <div class="form-container">
+            <h2>Student Registration Form</h2>
+            <form id="registration-form" action="submit_form.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br><br>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+                <br><br>
+                <label for="course">Course:</label>
+                <select id="course" name="course" required>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Biology">Biology</option>
+                </select>
+                <br><br>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <!-- Table -->
+        <h2>Student Information Table</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Dak Partop</td>
+                <td>dakpartop@example.com</td>
+                <td>Computer Science</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Gatkuoth Ghai</td>
+                <td>gatkuothghai@example.com</td>
+                <td>Physics</td>
+            </tr>
+        </table>
+
+        <!-- List -->
+        <h2>Courses Offered</h2>
+        <ul>
+            <li>Computer Science</li>
+            <li>Mathematics</li>
+            <li>Physics</li>
+            <li>Biology</li>
+        </ul>
+
+    </div>
+
+    <script>
+        // Simple form validation (can be enhanced further)
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let dob = document.getElementById('dob').value;
+
+            if (!name || !email || !dob) {
+                alert('Please fill all the fields');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
